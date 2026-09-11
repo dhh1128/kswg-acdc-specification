@@ -5197,9 +5197,9 @@ presentation while a verifier checks it.
 
 To make individual attributes independently disclosable, the issuer places each
 in its own element of an aggregate (`A`) section rather than in a single
-attribute block. Each element carries its own blinding UUID (`u`) and its own
-SAID (`d`); the section as a whole is committed to by a single aggregate digest
-(the AGID), which is element 0 of the list:
+attribute block. Each element carries its own blinding unique entropy (`u`) and
+its own SAID (`d`); the section as a whole is committed to by a single aggregate
+digest (the AGID), which is element 0 of the list:
 
 ```python
 [
@@ -5255,12 +5255,12 @@ blinded; only the withheld values themselves are protected.
 
 ##### Partial disclosure via compaction
 
-A credential marked *private* by a top-level UUID (`u`) can circulate in most
-compact form — each section reduced to its SAID — while still committing to its
-full content. Because the top-level SAID is computed over the most compact form,
-it is identical whether the credential is held compact or expanded. Here Amy
-issues such a private ACDC to Bob; in compact form its schema, attribute, and
-rule sections each appear as a SAID:
+A credential marked *private* by a top-level unique entropy (`u`) can circulate
+in most compact form — each section reduced to its SAID — while still committing
+to its full content. Because the top-level SAID is computed over the most
+compact form, it is identical whether the credential is held compact or
+expanded. Here Amy issues such a private ACDC to Bob; in compact form its
+schema, attribute, and rule sections each appear as a SAID:
 
 ```python
 {
